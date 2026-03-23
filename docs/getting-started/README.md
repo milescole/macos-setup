@@ -8,4 +8,4 @@ about individual applications or language ecosystems:
 - install Xcode and the Xcode Command Line Tools
 - review macOS settings that affect development ergonomics
 - define the initial application and CLI baseline
-- define which configuration should be tracked in the repository
+- apply the tracked dotfiles that already exist in the repository

@@ -5,7 +5,7 @@
     * [Xcode](getting-started/xcode.md)
     * [macOS Settings](getting-started/macos-settings.md)
     * [Essentials](getting-started/essentials.md)
-    * [Configuration](getting-started/app-config.md)
+    * [Dotfiles](getting-started/dotfiles.md)
   * [Applications](applications/README.md)
     * [Terminal](applications/terminal/README.md)
     * [Editors](applications/editors/README.md)
