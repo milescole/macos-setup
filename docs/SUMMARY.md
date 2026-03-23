@@ -2,7 +2,7 @@
 
 * [Mac Setup](README.md)
   * [Getting Started](getting-started/README.md)
-    * [Developer Tools](getting-started/developer-tools.md)
+    * [Xcode](getting-started/xcode.md)
     * [macOS Settings](getting-started/macos-settings.md)
     * [Essentials](getting-started/essentials.md)
     * [Configuration](getting-started/app-config.md)
