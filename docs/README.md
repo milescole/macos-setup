@@ -9,4 +9,11 @@ repository. It is organized as a layered guide:
   policy
 - `Maintenance` for updates, exports, and rebuild workflows
 
+For a fresh machine, start with `Getting Started` in this order:
+
+1. `Xcode`
+2. `Workspace`
+3. `macOS Settings`
+4. `Dotfiles`
+
 Use the navigation sidebar to move from initial setup to deeper tooling details.

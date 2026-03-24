@@ -96,33 +96,5 @@ sudo DevToolsSecurity -enable
 On newer macOS releases, you may also need to enable `Developer Mode` in
 System Settings under `Privacy & Security`.
 
-## Work Directories
-
-Create the user-level directories used by this repository's workflow:
-
-```bash
-mkdir -p ~/Developer
-mkdir -p ~/Developer/personal
-mkdir -p ~/Developer/work
-mkdir -p ~/Developer/oss
-mkdir -p ~/Developer/scratch
-mkdir -p ~/Developer/tools
-mkdir -p ~/Developer/archive
-```
-
-Use these directories consistently:
-
-- `~/Developer/personal` for personal repositories
-- `~/Developer/work` for employer or client repositories
-- `~/Developer/oss` for open-source repositories
-- `~/Developer/scratch` for experiments and throwaway projects
-- `~/Developer/tools` for local utility scripts, helper repos, and machine
-  infrastructure
-- `~/Developer/archive` for inactive repositories you want to keep around
-
-For example, this repository belongs under `oss`:
-
-```bash
-cd ~/Developer/oss
-git clone https://github.com/<your-user>/macos-setup.git
-```
+After Xcode is installed, continue with [Workspace](workspace.md) to create the
+standard directory layout for repositories and local tools.

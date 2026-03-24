@@ -3,6 +3,7 @@
 * [Mac Setup](README.md)
   * [Getting Started](getting-started/README.md)
     * [Xcode](getting-started/xcode.md)
+    * [Workspace](getting-started/workspace.md)
     * [macOS Settings](getting-started/macos-settings.md)
     * [Essentials](getting-started/essentials.md)
     * [Dotfiles](getting-started/dotfiles.md)

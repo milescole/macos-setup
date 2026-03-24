@@ -7,11 +7,19 @@ Personal macOS workstation setup with two outputs:
 
 ## Quick Start
 
-Clone the repository and run the bootstrap entrypoint:
+Use this order on a fresh machine:
+
+1. Install Xcode and the Xcode Command Line Tools by following
+   `docs/getting-started/xcode.md`.
+2. Create the standard workspace layout from
+   `docs/getting-started/workspace.md`.
+3. Clone this repository into `~/Developer/oss/macos-setup`.
+4. Run the bootstrap entrypoint from the repository root:
 
 ```bash
+cd ~/Developer/oss
 git clone https://github.com/<your-user>/macos-setup.git
-cd macos-setup
+cd ~/Developer/oss/macos-setup
 ./bootstrap/bootstrap.sh
 ```
 
