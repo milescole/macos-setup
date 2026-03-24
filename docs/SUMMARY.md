@@ -4,6 +4,7 @@
   * [Getting Started](getting-started/README.md)
     * [Xcode](getting-started/xcode.md)
     * [Workspace](getting-started/workspace.md)
+    * [Homebrew](getting-started/homebrew.md)
     * [macOS Settings](getting-started/macos-settings.md)
     * [Essentials](getting-started/essentials.md)
     * [Dotfiles](getting-started/dotfiles.md)

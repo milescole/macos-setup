@@ -7,8 +7,8 @@ Use this page to document:
 - which items are required on every machine versus optional
 
 The current baseline starts with [Xcode](xcode.md), then
-[Workspace](workspace.md), so the rest of the developer toolchain can be
-installed into a consistent machine layout.
+[Workspace](workspace.md), then [Homebrew](homebrew.md), so the rest of the
+developer toolchain can be installed into a consistent machine layout.
 
 Use `./bootstrap/bootstrap.sh` as the entrypoint for the repo-managed setup
 steps that exist at a given point in time.

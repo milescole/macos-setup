@@ -13,7 +13,8 @@ For a fresh machine, start with `Getting Started` in this order:
 
 1. `Xcode`
 2. `Workspace`
-3. `macOS Settings`
-4. `Dotfiles`
+3. `Homebrew`
+4. `macOS Settings`
+5. `Dotfiles`
 
 Use the navigation sidebar to move from initial setup to deeper tooling details.

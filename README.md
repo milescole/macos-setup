@@ -14,7 +14,8 @@ Use this order on a fresh machine:
 2. Create the standard workspace layout from
    `docs/getting-started/workspace.md`.
 3. Clone this repository into `~/Developer/oss/macos-setup`.
-4. Run the bootstrap entrypoint from the repository root:
+4. Install Homebrew from `docs/getting-started/homebrew.md`.
+5. Run the bootstrap entrypoint from the repository root:
 
 ```bash
 cd ~/Developer/oss

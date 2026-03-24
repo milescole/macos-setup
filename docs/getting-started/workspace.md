@@ -37,9 +37,12 @@ For contract work, group repositories by client under `work`:
 ~/Developer/work/contoso/mobile-app
 ```
 
-This repository belongs under `oss`:
+When you are ready to clone repositories, this repository belongs under `oss`:
 
 ```bash
 cd ~/Developer/oss
 git clone https://github.com/milescole/macos-setup.git
 ```
+
+After the workspace layout is in place, continue with
+[Homebrew](homebrew.md).
