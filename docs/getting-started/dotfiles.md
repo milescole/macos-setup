@@ -2,21 +2,48 @@
 
 Tracked dotfiles live in `dotfiles/`.
 
-## Apply `.zprofile`
+Use `./bootstrap/dotfiles.sh` to install them into your home directory.
 
-From the repository root, copy the tracked file into place:
+From the repository root:
 
 ```bash
-cp dotfiles/.zprofile ~/.zprofile
-source ~/.zprofile
+./bootstrap/dotfiles.sh
 ```
 
-This baseline profile initializes Homebrew for both Apple Silicon and Intel
-macOS machines.
+To install only a specific subset:
 
-If you already added the Homebrew shell initialization manually during the
-Homebrew install step, applying this tracked file later should preserve that
-behavior rather than introduce a second, different setup path.
+```bash
+./bootstrap/dotfiles.sh core
+./bootstrap/dotfiles.sh ghostty
+```
+
+By default the script will:
+
+- download from a GitHub raw URL if `DOTFILES_BASE_URL` is set or a GitHub
+  `origin` remote can be derived
+- fall back to the local tracked files in this repository otherwise
+- create any missing parent directories
+- back up an existing file before replacing it
+- skip files that already match
+
+You can force either mode explicitly:
+
+```bash
+DOTFILES_MODE=local ./bootstrap/dotfiles.sh
+DOTFILES_MODE=remote DOTFILES_BASE_URL="https://raw.githubusercontent.com/<user>/<repo>/<ref>/dotfiles" ./bootstrap/dotfiles.sh
+```
+
+## Current Components
+
+- `core` installs `.gitconfig` and `.zprofile`
+- `ghostty` installs `.config/ghostty/config`
+
+## Core Files
+
+The tracked `.zprofile` initializes Homebrew for both Apple Silicon and Intel
+macOS machines. If you already added the Homebrew shell initialization manually
+during the Homebrew install step, applying this tracked file later should
+preserve that behavior rather than introduce a second, different setup path.
 
 Use `.zprofile` for login-shell setup such as:
 
@@ -24,15 +51,8 @@ Use `.zprofile` for login-shell setup such as:
 - exported environment variables
 - Homebrew shell initialization
 
-## Apply `.gitconfig`
-
-From the repository root, copy the tracked file into place:
-
-```bash
-cp dotfiles/.gitconfig ~/.gitconfig
-```
-
-Then replace the placeholder identity values if needed:
+After installing `.gitconfig`, replace the placeholder identity values if
+needed:
 
 ```bash
 git config --global user.name "Your Full Name"
@@ -46,6 +66,6 @@ Apply these tracked files after the baseline machine setup is in place:
 1. install and configure Homebrew
 2. run `./bootstrap/bootstrap.sh` to apply the tracked package baseline
 3. review macOS settings and any application-specific setup
-4. copy `.zprofile` and `.gitconfig`
+4. run `./bootstrap/dotfiles.sh` for the tracked dotfiles you want to apply
 
 That keeps shell and Git restoration separate from the package bootstrap path.

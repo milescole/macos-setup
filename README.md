@@ -29,11 +29,19 @@ cd ~/Developer/oss/macos-setup
 6. Review the essential font baseline in `docs/getting-started/fonts.md`.
 7. Review the application, language, and macOS settings documentation for the
    rest of the machine baseline.
-8. Apply the tracked dotfiles from `docs/getting-started/dotfiles.md` last.
+8. Run `./bootstrap/dotfiles.sh` to apply the tracked dotfiles after the base
+   package bootstrap is complete.
 
 The bootstrap flow is intentionally minimal in the initial scaffolding commit.
 It applies the curated `Brewfile`, runs setup entrypoints, and verifies the
 repository scaffold.
+
+This repository now has two bootstrap entrypoints:
+
+- `./bootstrap/bootstrap.sh` for Homebrew packages, macOS defaults, and repo
+  verification
+- `./bootstrap/dotfiles.sh` for tracked dotfiles restored into the user home
+  directory, either from the local repo or GitHub raw URLs
 
 ## Repository Layout
 

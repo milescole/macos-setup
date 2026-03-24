@@ -1,0 +1,23 @@
+# === Theme and Colors ===
+theme = HaX0R Gr33N
+
+# === Font Configuration ===
+font-family = "Iosevka Nerd Font Mono"
+font-size = 14
+
+# === Window Layout ===
+window-width = 212
+window-height = 18
+window-position-x = 0
+window-position-y = 0
+window-save-state = never
+
+# === Shell Integration ===
+shell-integration = "detect"
+scrollbar = never
+window-padding-x = 5
+window-padding-y = 5
+macos-titlebar-style = tabs
+
+# === Keybindings ===
+keybind = shift+enter=text:\x1b\r

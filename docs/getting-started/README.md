@@ -14,8 +14,8 @@ Use this order:
 7. Run `./bootstrap/bootstrap.sh` from the repository root.
 8. Review [macOS Settings](macos-settings.md) and the relevant application
    pages for the rest of the machine setup.
-9. Apply [Dotfiles](dotfiles.md) after the baseline system and tool setup is in
-   place.
+9. Run `./bootstrap/dotfiles.sh` to apply [Dotfiles](dotfiles.md) after the
+   baseline system and tool setup is in place.
 
 This section covers the baseline steps that should be completed before worrying
 about individual applications or language ecosystems:
@@ -26,6 +26,7 @@ about individual applications or language ecosystems:
 - review the tracked CLI baseline before applying it
 - review the tracked font baseline before applying it
 - run the repo bootstrap to apply the tracked package baseline
+- run the dotfiles bootstrap to restore tracked config into the user home
 - review macOS settings that affect development ergonomics
 - define the initial application baseline
 - apply the tracked shell and Git configuration last

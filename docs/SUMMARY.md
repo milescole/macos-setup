@@ -11,6 +11,7 @@
     * [Dotfiles](getting-started/dotfiles.md)
   * [Applications](applications/README.md)
     * [Terminal](applications/terminal/README.md)
+      * [Ghostty](applications/terminal/ghostty.md)
     * [Editors](applications/editors/README.md)
     * [Browsers](applications/browsers/README.md)
     * [Productivity](applications/productivity/README.md)

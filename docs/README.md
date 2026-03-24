@@ -22,4 +22,10 @@ For a fresh machine, start with `Getting Started` in this order:
 Use the `Applications` and `Languages` sections after the package baseline is
 in place and before restoring tracked dotfiles.
 
+The setup now uses two bootstrap layers:
+
+- `./bootstrap/bootstrap.sh` applies packages and system-level setup
+- `./bootstrap/dotfiles.sh` applies tracked dotfiles after the machine baseline
+  is in place
+
 Use the navigation sidebar to move from initial setup to deeper tooling details.

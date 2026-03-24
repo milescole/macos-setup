@@ -6,5 +6,9 @@ Add one file per tool, for example:
 
 - `applications/terminal/<tool>.md`
 
+Current tracked tools:
+
+- `applications/terminal/ghostty.md`
+
 Use this landing page to document category-level conventions and selection
 criteria.

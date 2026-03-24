@@ -27,3 +27,6 @@ cask "font-iosevka"
 cask "font-iosevka-nerd-font"
 cask "font-meslo-lg"
 cask "font-meslo-lg-nerd-font"
+
+# Terminal applications
+cask "ghostty"
