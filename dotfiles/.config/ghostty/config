@@ -1,8 +1,8 @@
 # === Theme and Colors ===
-theme = HaX0R Gr33N
+theme = Catppuccin Frappe
 
 # === Font Configuration ===
-font-family = "Iosevka Nerd Font Mono"
+font-family = "FiraCode Nerd Font Mono"
 font-size = 14
 
 # === Window Layout ===
