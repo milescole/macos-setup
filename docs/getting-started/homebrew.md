@@ -21,17 +21,7 @@ Follow the prompts shown by the installer. On macOS, Homebrew installs into:
 Follow the post-install shell configuration printed by the installer. For the
 default `zsh` shell, that typically means adding Homebrew to `~/.zprofile`.
 
-If you are using the tracked dotfiles in this repository, copy the baseline
-profile into place:
-
-```bash
-cp dotfiles/.zprofile ~/.zprofile
-source ~/.zprofile
-```
-
-That tracked file handles both Apple Silicon and Intel Homebrew prefixes.
-
-If you are not using the tracked dotfiles, add the appropriate line manually:
+Add the appropriate line manually during initial setup:
 
 Apple Silicon:
 
@@ -49,6 +39,9 @@ eval "$(/usr/local/bin/brew shellenv zsh)"
 
 If the installer prints a different path or shell file, use that output instead
 of the examples above.
+
+If you later restore the tracked dotfiles from this repository, make sure the
+tracked `dotfiles/.zprofile` still includes the same Homebrew initialization.
 
 ## Verify
 
@@ -88,8 +81,8 @@ brew bundle install --file ./Brewfile
 
 The bootstrap entrypoint runs the same command through
 `./bootstrap/homebrew.sh`, so `./bootstrap/bootstrap.sh` will install and
-upgrade the declared formulas automatically. Run it after applying the tracked
-dotfiles so the shell environment is in the expected state.
+upgrade the declared formulas automatically. Run it after Homebrew itself is
+configured and before restoring the tracked dotfiles.
 
 When curating packages:
 
