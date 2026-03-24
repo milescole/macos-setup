@@ -15,6 +15,7 @@ To install only a specific subset:
 ```bash
 ./bootstrap/dotfiles.sh core
 ./bootstrap/dotfiles.sh ghostty
+./bootstrap/dotfiles.sh shell
 ./bootstrap/dotfiles.sh starship
 ```
 
@@ -38,6 +39,7 @@ DOTFILES_MODE=remote DOTFILES_BASE_URL="https://raw.githubusercontent.com/<user>
 
 - `core` installs `.gitconfig` and `.zprofile`
 - `ghostty` installs `.config/ghostty/config`
+- `shell` installs `.zshrc` and the tracked `~/my` support files
 - `starship` installs `.config/starship.toml`
 
 ## Core Files
@@ -60,6 +62,29 @@ needed:
 git config --global user.name "Your Full Name"
 git config --global user.email "Your Email"
 ```
+
+## Shell Files
+
+The tracked shell component restores:
+
+- `.zshrc`
+- `shell/.gitattributes`
+- `shell/.gitignore`
+- `shell/aliases.zsh`
+- `shell/exports.zsh`
+- `shell/extra.zsh`
+- `shell/functions.zsh`
+- `shell/paths.zsh`
+
+Apply it with:
+
+```bash
+./bootstrap/dotfiles.sh shell
+```
+
+This shell baseline is where Starship, `zsh-completions`,
+`zsh-autosuggestions`, and `zsh-syntax-highlighting` are actually wired
+together after their packages are installed.
 
 ## Recommended Order
 

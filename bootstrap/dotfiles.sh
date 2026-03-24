@@ -105,6 +105,7 @@ install_component() {
     all)
       install_component core
       install_component ghostty
+      install_component shell
       install_component starship
       ;;
     core)
@@ -114,11 +115,21 @@ install_component() {
     ghostty)
       install_file ".config/ghostty/config"
       ;;
+    shell)
+      install_file ".zshrc"
+      install_file "shell/.gitattributes"
+      install_file "shell/.gitignore"
+      install_file "shell/aliases.zsh"
+      install_file "shell/exports.zsh"
+      install_file "shell/extra.zsh"
+      install_file "shell/functions.zsh"
+      install_file "shell/paths.zsh"
+      ;;
     starship)
       install_file ".config/starship.toml"
       ;;
     *)
-      die "Unknown component: ${component}. Expected one of: all, core, ghostty, starship."
+      die "Unknown component: ${component}. Expected one of: all, core, ghostty, shell, starship."
       ;;
   esac
 }

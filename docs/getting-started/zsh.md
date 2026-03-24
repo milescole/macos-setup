@@ -46,12 +46,51 @@ The tracked plugin scope stays intentionally small:
 - `zsh-syntax-highlighting` for command-line feedback while typing
 
 This commit installs the packages only. Shell activation and load order are
-handled later through the tracked `.zshrc` so package installation and shell
-wiring stay isolated.
+handled through the tracked `.zshrc` restored by:
+
+```bash
+./bootstrap/dotfiles.sh shell
+```
+
+That keeps package installation and shell wiring isolated while still making
+the full shell setup reproducible.
+
+## Manual Verification And Troubleshooting
+
+The package baseline is normally installed through the tracked `Brewfile`, but
+these direct commands are useful when validating the shell setup by hand:
+
+```bash
+brew install zsh-completions
+
+# To opt-in to using completions for external commands
+brew completions link
+
+# You may also need to force rebuild zcompdump
+rm -f ~/.zcompdump
+autoload -Uz compinit
+compinit
+
+# If compinit reports insecure directories
+chmod -R go-w "$(brew --prefix)/share/zsh"
+compaudit | xargs chmod g-w
+
+# Plugin install paths
+brew install zsh-autosuggestions
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+brew install zsh-syntax-highlighting
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+```
+
+These commands are troubleshooting aids. The normal repo flow is still:
+
+1. install the packages with `./bootstrap/homebrew.sh`
+2. apply the tracked shell files with `./bootstrap/dotfiles.sh shell`
+3. open a new shell or run `source ~/.zshrc`
 
 ## Related Config
 
 - [Starship](../applications/terminal/starship.md) provides the prompt config
 - [Dotfiles](dotfiles.md) restores tracked shell files into the user home
-- a later shell dotfiles step will wire `zsh`, Starship, and the plugins
-  together
+- the tracked shell dotfiles wire `zsh`, Starship, and the plugins together
