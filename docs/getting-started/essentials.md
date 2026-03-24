@@ -80,10 +80,9 @@ part of the long-term baseline.
 Keep this page focused on baseline policy. Put deeper notes in the sections
 that match the tool type:
 
+- shared font policy in [Fonts](fonts.md) when the same choices affect the
+  whole machine baseline
 - terminal applications and shell workflow in [Terminal](../applications/terminal/README.md)
 - editors and IDEs in [Editors](../applications/editors/README.md)
 - desktop utilities in [Utilities](../applications/utilities/README.md)
 - broader software choices in [Productivity](../applications/productivity/README.md) or [Languages](../languages/README.md)
-
-Fonts should usually be documented with the terminal or editor they affect
-rather than maintained here as a separate package list.

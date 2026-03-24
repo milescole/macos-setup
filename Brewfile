@@ -4,8 +4,6 @@
 # then edit the results down to the tools that should exist on every
 # rebuild.
 
-# Taps
-
 # Core CLI tools
 brew "bat"
 brew "eza"
@@ -19,3 +17,13 @@ brew "procs"
 brew "ripgrep"
 brew "tldr"
 brew "watch"
+
+# Fonts
+cask "font-fira-code"
+cask "font-fira-code-nerd-font"
+cask "font-hack"
+cask "font-hack-nerd-font"
+cask "font-iosevka"
+cask "font-iosevka-nerd-font"
+cask "font-meslo-lg"
+cask "font-meslo-lg-nerd-font"

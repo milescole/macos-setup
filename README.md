@@ -26,9 +26,10 @@ cd ~/Developer/oss/macos-setup
 ./bootstrap/bootstrap.sh
 ```
 
-6. Review the application, language, and macOS settings documentation for the
+6. Review the essential font baseline in `docs/getting-started/fonts.md`.
+7. Review the application, language, and macOS settings documentation for the
    rest of the machine baseline.
-7. Apply the tracked dotfiles from `docs/getting-started/dotfiles.md` last.
+8. Apply the tracked dotfiles from `docs/getting-started/dotfiles.md` last.
 
 The bootstrap flow is intentionally minimal in the initial scaffolding commit.
 It applies the curated `Brewfile`, runs setup entrypoints, and verifies the
