@@ -18,6 +18,10 @@ brew "ripgrep"
 brew "starship"
 brew "tldr"
 brew "watch"
+brew "zsh"
+brew "zsh-autosuggestions"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
 
 # Fonts
 cask "font-fira-code"

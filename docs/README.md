@@ -16,8 +16,9 @@ For a fresh machine, start with `Getting Started` in this order:
 3. `Homebrew`
 4. `Essentials`
 5. `Fonts`
-6. `macOS Settings`
-7. `Dotfiles`
+6. `Zsh`
+7. `macOS Settings`
+8. `Dotfiles`
 
 Use the `Applications` and `Languages` sections after the package baseline is
 in place and before restoring tracked dotfiles.

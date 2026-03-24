@@ -7,6 +7,7 @@
     * [Homebrew](getting-started/homebrew.md)
     * [Essentials](getting-started/essentials.md)
     * [Fonts](getting-started/fonts.md)
+    * [Zsh](getting-started/zsh.md)
     * [macOS Settings](getting-started/macos-settings.md)
     * [Dotfiles](getting-started/dotfiles.md)
   * [Applications](applications/README.md)

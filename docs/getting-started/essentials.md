@@ -40,7 +40,8 @@ section instead.
 The tracked `Brewfile` currently covers a small default set:
 
 - core CLI essentials: `bat`, `eza`, `fd`, `fzf`, `git`, `gh`, `htop`, `jq`,
-  `procs`, `ripgrep`, `tldr`, and `watch`
+  `procs`, `ripgrep`, `starship`, `tldr`, `watch`, `zsh`,
+  `zsh-autosuggestions`, `zsh-completions`, and `zsh-syntax-highlighting`
 
 As the handbook grows, add tools deliberately and keep the baseline focused on
 what belongs on every machine.
@@ -59,8 +60,13 @@ These are the only CLI tools currently treated as essentials in this repo:
 - [`jq`](https://jqlang.org/) — inspect and transform JSON from the command line
 - [`procs`](https://github.com/dalance/procs) — replace `ps` with friendlier process output
 - [`ripgrep`](https://github.com/BurntSushi/ripgrep) — search source trees faster than traditional `grep`
+- [`starship`](https://starship.rs/) — provide a fast, cross-shell prompt baseline
 - [`tldr`](https://tldr.sh/) — look up short, practical command examples from the terminal
 - [`watch`](https://man7.org/linux/man-pages/man1/watch.1.html) — run a command repeatedly and display the output in a terminal-friendly view
+- [`zsh`](https://www.zsh.org/) — standardize the interactive shell baseline on a package-managed build
+- [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) — suggest commands from history and completions while typing
+- [`zsh-completions`](https://github.com/zsh-users/zsh-completions) — add extra completion definitions beyond the default shell bundle
+- [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting) — show command feedback inline before execution
 
 ## Workflow
 
@@ -82,6 +88,7 @@ that match the tool type:
 
 - shared font policy in [Fonts](fonts.md) when the same choices affect the
   whole machine baseline
+- shell package baseline and plugin policy in [Zsh](zsh.md)
 - terminal applications and shell workflow in [Terminal](../applications/terminal/README.md)
 - editors and IDEs in [Editors](../applications/editors/README.md)
 - desktop utilities in [Utilities](../applications/utilities/README.md)
