@@ -19,6 +19,7 @@ require_macos() {
 main() {
   require_macos
   log "Running scaffolding bootstrap"
+  "${SCRIPT_DIR}/homebrew.sh"
   "${SCRIPT_DIR}/macos-defaults.sh"
   "${SCRIPT_DIR}/verify.sh"
   log "Bootstrap complete"

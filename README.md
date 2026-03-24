@@ -4,6 +4,7 @@ Personal macOS workstation setup with two outputs:
 
 - a reproducible bootstrap flow for a fresh machine
 - a layered GitBook handbook for apps, toolchains, and configuration
+- a curated `Brewfile` for baseline CLI tools
 
 ## Quick Start
 
@@ -25,11 +26,13 @@ cd ~/Developer/oss/macos-setup
 ```
 
 The bootstrap flow is intentionally minimal in the initial scaffolding commit.
-It runs placeholder setup entrypoints and verifies the repository scaffold.
+It applies the curated `Brewfile`, runs setup entrypoints, and verifies the
+repository scaffold.
 
 ## Repository Layout
 
 - `bootstrap/`: setup entrypoints and system configuration scripts
+- `Brewfile`: curated Homebrew formulas for the baseline CLI setup
 - `dotfiles/`: placeholder for future tracked configuration and exported settings
 - `scripts/`: maintenance and export helpers
 - `docs/`: GitBook source with a layered hierarchy

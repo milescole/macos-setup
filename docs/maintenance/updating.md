@@ -6,7 +6,12 @@ Common maintenance tasks:
 
 ```bash
 ./scripts/doctor.sh
+brew bundle install --file ./Brewfile
 ```
 
-Use this section to document your ongoing workflow for curating the machine
-baseline as tools change.
+When the package baseline changes, edit `./Brewfile` directly and rerun
+`brew bundle install --file ./Brewfile`.
+
+If you use `brew bundle dump` to snapshot an existing machine, treat that output
+as a draft. Remove one-off tools and keep only the formulas that
+belong in the long-term workstation baseline.

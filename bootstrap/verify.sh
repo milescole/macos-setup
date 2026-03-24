@@ -38,5 +38,9 @@ check_path() {
 check_path "${REPO_ROOT}/docs/SUMMARY.md"
 check_path "${REPO_ROOT}/docs/README.md"
 check_path "${REPO_ROOT}/dotfiles/README.md"
+check_path "${REPO_ROOT}/Brewfile"
+check_path "${REPO_ROOT}/bootstrap/homebrew.sh"
+
+check_command "brew"
 
 exit "${status}"

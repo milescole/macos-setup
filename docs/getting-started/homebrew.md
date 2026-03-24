@@ -71,4 +71,29 @@ brew analytics off
 ```
 
 After Homebrew is installed, continue with the repo bootstrap and the baseline
-tooling pages that depend on package-managed CLIs and casks.
+tooling pages that depend on package-managed CLI tools.
+
+## Use the Repository Brewfile
+
+This repository tracks its baseline Homebrew state in the root `Brewfile`.
+Keep that file curated rather than dumping the entire contents of a machine into
+version control.
+
+Typical workflow:
+
+```bash
+cd ~/Developer/oss/macos-setup
+brew bundle install --file ./Brewfile
+```
+
+The bootstrap entrypoint runs the same command through
+`./bootstrap/homebrew.sh`, so `./bootstrap/bootstrap.sh` will install and
+upgrade the declared formulas automatically. Run it after applying the tracked
+dotfiles so the shell environment is in the expected state.
+
+When curating packages:
+
+- add or remove entries in `Brewfile` deliberately
+- keep the file focused on the baseline tools that belong on every machine
+- use `brew bundle dump --file ./Brewfile --force` only as a discovery aid, then
+  edit the results back down to the desired baseline
