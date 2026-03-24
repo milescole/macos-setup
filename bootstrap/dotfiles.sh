@@ -105,6 +105,7 @@ install_component() {
     all)
       install_component core
       install_component ghostty
+      install_component starship
       ;;
     core)
       install_file ".gitconfig"
@@ -113,8 +114,11 @@ install_component() {
     ghostty)
       install_file ".config/ghostty/config"
       ;;
+    starship)
+      install_file ".config/starship.toml"
+      ;;
     *)
-      die "Unknown component: ${component}. Expected one of: all, core, ghostty."
+      die "Unknown component: ${component}. Expected one of: all, core, ghostty, starship."
       ;;
   esac
 }

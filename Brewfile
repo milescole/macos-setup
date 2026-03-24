@@ -15,6 +15,7 @@ brew "htop"
 brew "jq"
 brew "procs"
 brew "ripgrep"
+brew "starship"
 brew "tldr"
 brew "watch"
 

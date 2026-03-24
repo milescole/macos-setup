@@ -10,3 +10,4 @@ Current baseline files:
 - `.zprofile` for Homebrew shell initialization
 - `.gitconfig` for Git identity and defaults
 - `.config/ghostty/config` for the Ghostty terminal baseline
+- `.config/starship.toml` for the Starship prompt baseline

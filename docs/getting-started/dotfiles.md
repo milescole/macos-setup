@@ -15,6 +15,7 @@ To install only a specific subset:
 ```bash
 ./bootstrap/dotfiles.sh core
 ./bootstrap/dotfiles.sh ghostty
+./bootstrap/dotfiles.sh starship
 ```
 
 By default the script will:
@@ -37,6 +38,7 @@ DOTFILES_MODE=remote DOTFILES_BASE_URL="https://raw.githubusercontent.com/<user>
 
 - `core` installs `.gitconfig` and `.zprofile`
 - `ghostty` installs `.config/ghostty/config`
+- `starship` installs `.config/starship.toml`
 
 ## Core Files
 

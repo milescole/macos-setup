@@ -9,6 +9,7 @@ Add one file per tool, for example:
 Current tracked tools:
 
 - `applications/terminal/ghostty.md`
+- `applications/terminal/starship.md`
 
 Use this landing page to document category-level conventions and selection
 criteria.
