@@ -8,6 +8,7 @@ individual tool should get its own file inside that folder.
 
 Examples of the intended shape:
 
+- `applications/ai/<tool>.md`
 - `applications/terminal/<tool>.md`
 - `applications/editors/<tool>.md`
 - `applications/productivity/<tool>.md`

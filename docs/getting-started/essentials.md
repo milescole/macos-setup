@@ -42,6 +42,7 @@ The tracked `Brewfile` currently covers a small default set:
 - core CLI essentials: `bat`, `eza`, `fd`, `fzf`, `git`, `gh`, `htop`, `jq`,
   `procs`, `ripgrep`, `starship`, `tldr`, `watch`, `zsh`,
   `zsh-autosuggestions`, `zsh-completions`, and `zsh-syntax-highlighting`
+- AI tooling: `chatgpt`, `claude`, `claude-code`, `codex`, and `codex-app`
 
 As the handbook grows, add tools deliberately and keep the baseline focused on
 what belongs on every machine.
@@ -68,6 +69,16 @@ These are the only CLI tools currently treated as essentials in this repo:
 - [`zsh-completions`](https://github.com/zsh-users/zsh-completions) — add extra completion definitions beyond the default shell bundle
 - [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting) — show command feedback inline before execution
 
+## Essential AI Tools
+
+These are the AI tools currently tracked in the baseline:
+
+- [`ChatGPT`](https://chatgpt.com/) — provide OpenAI's general-purpose desktop client
+- [`Claude`](https://claude.com/download) — provide Anthropic's desktop Claude app
+- [`Claude Code`](https://www.anthropic.com/claude-code) — run Anthropic's terminal coding assistant against local repositories
+- [`Codex`](https://github.com/openai/codex) — run OpenAI's terminal coding agent against local worktrees
+- [`Codex App`](https://openai.com/codex) — provide OpenAI's desktop Codex client for managing coding agents
+
 ## Workflow
 
 Use these commands from the repository root:
@@ -90,6 +101,7 @@ that match the tool type:
   whole machine baseline
 - shell package baseline and plugin policy in [Zsh](zsh.md)
 - terminal applications and shell workflow in [Terminal](../applications/terminal/README.md)
+- AI agents and desktop AI clients in [AI Tooling](../applications/ai/README.md)
 - editors and IDEs in [Editors](../applications/editors/README.md)
 - desktop utilities in [Utilities](../applications/utilities/README.md)
 - broader software choices in [Productivity](../applications/productivity/README.md) or [Languages](../languages/README.md)

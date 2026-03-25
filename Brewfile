@@ -23,6 +23,13 @@ brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 
+# AI tooling
+cask "chatgpt"
+cask "claude"
+cask "claude-code"
+cask "codex-app"
+cask "codex"
+
 # Fonts
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
