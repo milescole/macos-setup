@@ -27,15 +27,30 @@ default workstation build, not a later optional customization.
 macOS already ships with `zsh`, but this repository treats the Homebrew build
 as the tracked baseline.
 
-Switching the login shell remains a manual step:
+Switching the login shell remains a manual step. Use the Homebrew-installed
+binary, not the system `zsh` in `/bin/zsh`.
 
 ```bash
-which zsh
-chsh -s "$(which zsh)"
+brew --prefix zsh
+grep -qxF "$(brew --prefix zsh)/bin/zsh" /etc/shells || \
+  sudo sh -c 'echo "$(brew --prefix zsh)/bin/zsh" >> /etc/shells'
+chsh -s "$(brew --prefix zsh)/bin/zsh"
 ```
 
-Only run `chsh` after Homebrew `zsh` is installed and available in your shell
-path.
+Only run `chsh` after Homebrew `zsh` is installed. On a default Homebrew setup
+this resolves to `/opt/homebrew/bin/zsh` on Apple Silicon Macs and
+`/usr/local/bin/zsh` on Intel Macs.
+
+After changing the login shell, log out and back in or open a fresh terminal
+session, then verify:
+
+```bash
+echo "$SHELL"
+$SHELL --version
+```
+
+The shell path should point at the Homebrew install, for example
+`/opt/homebrew/bin/zsh` or `/usr/local/bin/zsh`.
 
 ## Plugin Baseline
 
