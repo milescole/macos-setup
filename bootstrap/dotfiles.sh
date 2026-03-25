@@ -138,24 +138,22 @@ install_component() {
       install_component vscode
       ;;
     core)
-      install_file ".gitconfig"
-      install_file ".zprofile"
+      install_file_to "git/.gitconfig" "${DEST_HOME}/.gitconfig"
+      install_file_to "zsh/.zprofile" "${DEST_HOME}/.zprofile"
       ;;
     ghostty)
-      install_file ".config/ghostty/config"
+      install_file_to "ghostty/config" "${DEST_HOME}/.config/ghostty/config"
       ;;
     shell)
-      install_file ".zshrc"
-      install_file "shell/.gitattributes"
-      install_file "shell/.gitignore"
-      install_file "shell/aliases.zsh"
-      install_file "shell/exports.zsh"
-      install_file "shell/extra.zsh"
-      install_file "shell/functions.zsh"
-      install_file "shell/paths.zsh"
+      install_file_to "zsh/.zshrc" "${DEST_HOME}/.zshrc"
+      install_file_to "zsh/aliases.zsh" "${DEST_HOME}/.config/zsh/aliases.zsh"
+      install_file_to "zsh/exports.zsh" "${DEST_HOME}/.config/zsh/exports.zsh"
+      install_file_to "zsh/extra.zsh" "${DEST_HOME}/.config/zsh/extra.zsh"
+      install_file_to "zsh/functions.zsh" "${DEST_HOME}/.config/zsh/functions.zsh"
+      install_file_to "zsh/paths.zsh" "${DEST_HOME}/.config/zsh/paths.zsh"
       ;;
     starship)
-      install_file ".config/starship.toml"
+      install_file_to "starship/starship.toml" "${DEST_HOME}/.config/starship.toml"
       ;;
     vscode)
       install_file_to "vscode/settings.json" \

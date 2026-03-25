@@ -107,5 +107,5 @@ These commands are troubleshooting aids. The normal repo flow is still:
 ## Related Config
 
 - [Starship](../applications/terminal/starship.md) provides the prompt config
-- [Dotfiles](dotfiles.md) restores tracked shell files into the user home
+- [Dotfiles](dotfiles.md) restores tracked shell files into `~/.config/zsh`
 - the tracked shell dotfiles wire `zsh`, Starship, and the plugins together

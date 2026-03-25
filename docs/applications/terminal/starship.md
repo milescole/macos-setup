@@ -9,7 +9,7 @@ single tracked config that can be reused across machines.
 brew install starship
 ```
 
-The tracked config lives at `dotfiles/.config/starship.toml` and is restored
+The tracked config lives at `dotfiles/starship/starship.toml` and is restored
 into `~/.config/starship.toml` with:
 
 ```bash

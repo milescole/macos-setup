@@ -47,7 +47,7 @@ This repository now has two bootstrap entrypoints:
 
 - `bootstrap/`: setup entrypoints and system configuration scripts
 - `Brewfile`: curated Homebrew formulas for the baseline CLI setup
-- `dotfiles/`: tracked shell and Git configuration for rebuilds
+- `dotfiles/`: tracked shell, Git, terminal, and editor configuration for rebuilds
 - `scripts/`: maintenance and export helpers
 - `docs/`: GitBook source with a layered hierarchy
 

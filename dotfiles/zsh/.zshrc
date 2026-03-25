@@ -1,4 +1,19 @@
 # Interactive zsh shell setup.
+ZSH_CONFIG_DIR="${XDG_CONFIG_HOME:-${HOME}/.config}/zsh"
+LEGACY_ZSH_CONFIG_DIR="${HOME}/shell"
+
+load_zsh_file() {
+  local file_name="$1"
+  local primary_path="${ZSH_CONFIG_DIR}/${file_name}"
+  local legacy_path="${LEGACY_ZSH_CONFIG_DIR}/${file_name}"
+
+  if [[ -f "${primary_path}" ]]; then
+    source "${primary_path}"
+  elif [[ -f "${legacy_path}" ]]; then
+    source "${legacy_path}"
+  fi
+}
+
 # === Prompt ===
 if command -v starship >/dev/null 2>&1; then
   eval "$(starship init zsh)"
@@ -34,9 +49,13 @@ if command -v brew >/dev/null 2>&1; then
   fi
 fi
 
-# === Personal Files ===
-[[ -f ~/shell/exports.zsh ]] && source ~/shell/exports.zsh
-[[ -f ~/shell/extra.zsh ]] && source ~/shell/extra.zsh
-[[ -f ~/shell/functions.zsh ]] && source ~/shell/functions.zsh
-[[ -f ~/shell/aliases.zsh ]] && source ~/shell/aliases.zsh
-[[ -f ~/shell/paths.zsh ]] && source ~/shell/paths.zsh
+# === Managed Zsh Config ===
+for zsh_file in exports.zsh paths.zsh functions.zsh aliases.zsh; do
+  load_zsh_file "${zsh_file}"
+done
+
+load_zsh_file "extra.zsh"
+
+if [[ -f "${ZSH_CONFIG_DIR}/local.zsh" ]]; then
+  source "${ZSH_CONFIG_DIR}/local.zsh"
+fi

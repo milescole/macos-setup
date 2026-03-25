@@ -29,6 +29,10 @@ By default the script will:
 - back up an existing file before replacing it
 - skip files that already match
 
+The repository stores tracked config in human-readable tool folders under
+`dotfiles/`. The bootstrap script maps those files into their installed
+locations such as `~/.zshrc`, `~/.gitconfig`, and `~/.config/...`.
+
 You can force either mode explicitly:
 
 ```bash
@@ -38,16 +42,20 @@ DOTFILES_MODE=remote DOTFILES_BASE_URL="https://raw.githubusercontent.com/<user>
 
 ## Current Components
 
-- `core` installs `.gitconfig` and `.zprofile`
-- `ghostty` installs `.config/ghostty/config`
-- `shell` installs `.zshrc` and the tracked `~/shell` support files
-- `starship` installs `.config/starship.toml`
+- `core` installs `dotfiles/git/.gitconfig` to `~/.gitconfig` and
+  `dotfiles/zsh/.zprofile` to `~/.zprofile`
+- `ghostty` installs `dotfiles/ghostty/config` to `~/.config/ghostty/config`
+- `shell` installs `dotfiles/zsh/.zshrc` to `~/.zshrc` and maps the tracked
+  `dotfiles/zsh/*.zsh` support files into `~/.config/zsh/`
+- `starship` installs `dotfiles/starship/starship.toml` to
+  `~/.config/starship.toml`
 - `vscode` installs VS Code user settings, keybindings, and the tracked
   extension baseline
 
 ## Core Files
 
-The tracked `.zprofile` initializes Homebrew for both Apple Silicon and Intel
+The tracked `dotfiles/zsh/.zprofile` file installs to `~/.zprofile` and
+initializes Homebrew for both Apple Silicon and Intel
 macOS machines. If you already added the Homebrew shell initialization manually
 during the Homebrew install step, applying this tracked file later should
 preserve that behavior rather than introduce a second, different setup path.
@@ -58,7 +66,7 @@ Use `.zprofile` for login-shell setup such as:
 - exported environment variables
 - Homebrew shell initialization
 
-After installing `.gitconfig`, replace the placeholder identity values if
+After installing `~/.gitconfig`, replace the placeholder identity values if
 needed:
 
 ```bash
@@ -70,14 +78,12 @@ git config --global user.email "Your Email"
 
 The tracked shell component restores:
 
-- `.zshrc`
-- `shell/.gitattributes`
-- `shell/.gitignore`
-- `shell/aliases.zsh`
-- `shell/exports.zsh`
-- `shell/extra.zsh`
-- `shell/functions.zsh`
-- `shell/paths.zsh`
+- `dotfiles/zsh/.zshrc` into `~/.zshrc`
+- `dotfiles/zsh/aliases.zsh` into `~/.config/zsh/aliases.zsh`
+- `dotfiles/zsh/exports.zsh` into `~/.config/zsh/exports.zsh`
+- `dotfiles/zsh/extra.zsh` into `~/.config/zsh/extra.zsh`
+- `dotfiles/zsh/functions.zsh` into `~/.config/zsh/functions.zsh`
+- `dotfiles/zsh/paths.zsh` into `~/.config/zsh/paths.zsh`
 
 Apply it with:
 
@@ -88,6 +94,15 @@ Apply it with:
 This shell baseline is where Starship, `zsh-completions`,
 `zsh-autosuggestions`, and `zsh-syntax-highlighting` are actually wired
 together after their packages are installed.
+
+The tracked `extra.zsh` hook remains part of the shared baseline and now lives
+at `~/.config/zsh/extra.zsh`.
+
+Personal overrides now belong in `~/.config/zsh/local.zsh`. That file is not
+managed by this repository, but the tracked `.zshrc` will source it after the
+shared baseline if it exists. For migration safety, the loader also still falls
+back to the legacy `~/shell/extra.zsh` path when `~/.config/zsh/extra.zsh` has
+not been installed yet.
 
 The tracked `paths.zsh` file also adds the VS Code app bundle CLI path when
 `/Applications/Visual Studio Code.app` is present so `code --wait` matches the

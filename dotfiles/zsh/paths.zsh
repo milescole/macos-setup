@@ -1,4 +1,4 @@
-# PATH additions loaded after the shared baseline.
+# Managed PATH additions loaded from .zshrc.
 
 if [[ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]]; then
   if (( ${path[(Ie)/Applications/Visual Studio Code.app/Contents/Resources/app/bin]} == 0 )); then

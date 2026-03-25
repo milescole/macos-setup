@@ -41,7 +41,7 @@ If the installer prints a different path or shell file, use that output instead
 of the examples above.
 
 If you later restore the tracked dotfiles from this repository, make sure the
-tracked `dotfiles/.zprofile` still includes the same Homebrew initialization.
+tracked `dotfiles/zsh/.zprofile` still includes the same Homebrew initialization.
 
 ## Verify
 

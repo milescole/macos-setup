@@ -1,4 +1,4 @@
-# Shell aliases loaded from .zshrc.
+# Managed shell aliases loaded from .zshrc.
 
 # === bat ===
 if command -v bat >/dev/null 2>&1; then

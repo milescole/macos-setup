@@ -9,7 +9,7 @@ restore from the tracked `Brewfile`.
 brew install --cask ghostty
 ```
 
-The tracked config lives at `dotfiles/.config/ghostty/config` and is restored
+The tracked config lives at `dotfiles/ghostty/config` and is restored
 into `~/.config/ghostty/config` with:
 
 ```bash
