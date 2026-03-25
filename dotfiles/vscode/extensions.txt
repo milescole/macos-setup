@@ -1,0 +1,8 @@
+# Appearance
+Catppuccin.catppuccin-vsc
+catppuccin.catppuccin-vsc-icons
+
+# Python
+ms-python.python
+charliermarsh.ruff
+astral-sh.ty

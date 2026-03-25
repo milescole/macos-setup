@@ -57,31 +57,45 @@ download_remote_file() {
   local relative_path="$1"
   local destination_path="$2"
   local base_url="$3"
+  local encoded_path
 
-  curl -fsSL "${base_url}/${relative_path}" -o "${destination_path}"
+  encoded_path="${relative_path// /%20}"
+  curl -fsSL "${base_url}/${encoded_path}" -o "${destination_path}"
+}
+
+stage_file() {
+  local relative_path="$1"
+  local destination_path="$2"
+  local base_url=""
+
+  if [[ "${DOTFILES_MODE}" == "remote" ]]; then
+    base_url="$(derive_base_url)" || die "Unable to determine DOTFILES_BASE_URL for remote mode."
+    download_remote_file "${relative_path}" "${destination_path}" "${base_url}"
+  elif [[ "${DOTFILES_MODE}" == "local" ]]; then
+    copy_local_file "${relative_path}" "${destination_path}"
+  else
+    if base_url="$(derive_base_url)"; then
+      download_remote_file "${relative_path}" "${destination_path}" "${base_url}"
+    else
+      copy_local_file "${relative_path}" "${destination_path}"
+    fi
+  fi
 }
 
 install_file() {
   local relative_path="$1"
   local destination_path="${DEST_HOME}/${relative_path}"
+  install_file_to "${relative_path}" "${destination_path}"
+}
+
+install_file_to() {
+  local relative_path="$1"
+  local destination_path="$2"
   local temp_path
-  local base_url=""
 
   mkdir -p "$(dirname "${destination_path}")"
   temp_path="$(mktemp "${TMPDIR:-/tmp}/dotfile.XXXXXX")"
-
-  if [[ "${DOTFILES_MODE}" == "remote" ]]; then
-    base_url="$(derive_base_url)" || die "Unable to determine DOTFILES_BASE_URL for remote mode."
-    download_remote_file "${relative_path}" "${temp_path}" "${base_url}"
-  elif [[ "${DOTFILES_MODE}" == "local" ]]; then
-    copy_local_file "${relative_path}" "${temp_path}"
-  else
-    if base_url="$(derive_base_url)"; then
-      download_remote_file "${relative_path}" "${temp_path}" "${base_url}"
-    else
-      copy_local_file "${relative_path}" "${temp_path}"
-    fi
-  fi
+  stage_file "${relative_path}" "${temp_path}"
 
   if [[ -e "${destination_path}" ]] && cmp -s "${temp_path}" "${destination_path}"; then
     rm -f "${temp_path}"
@@ -98,6 +112,20 @@ install_file() {
   log "Installed: ${destination_path}"
 }
 
+install_vscode_extensions() {
+  local temp_path
+
+  temp_path="$(mktemp "${TMPDIR:-/tmp}/dotfile.XXXXXX")"
+  stage_file "vscode/extensions.txt" "${temp_path}"
+  log "Installing tracked VS Code extensions"
+  if ! VSCODE_EXTENSIONS_FILE="${temp_path}" \
+    "${REPO_ROOT}/scripts/vscode-extensions.sh" install; then
+    rm -f "${temp_path}"
+    return 1
+  fi
+  rm -f "${temp_path}"
+}
+
 install_component() {
   local component="$1"
 
@@ -107,6 +135,7 @@ install_component() {
       install_component ghostty
       install_component shell
       install_component starship
+      install_component vscode
       ;;
     core)
       install_file ".gitconfig"
@@ -128,8 +157,15 @@ install_component() {
     starship)
       install_file ".config/starship.toml"
       ;;
+    vscode)
+      install_file_to "vscode/settings.json" \
+        "${DEST_HOME}/Library/Application Support/Code/User/settings.json"
+      install_file_to "vscode/keybindings.json" \
+        "${DEST_HOME}/Library/Application Support/Code/User/keybindings.json"
+      install_vscode_extensions
+      ;;
     *)
-      die "Unknown component: ${component}. Expected one of: all, core, ghostty, shell, starship."
+      die "Unknown component: ${component}. Expected one of: all, core, ghostty, shell, starship, vscode."
       ;;
   esac
 }

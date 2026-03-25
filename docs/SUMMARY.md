@@ -15,6 +15,7 @@
       * [Ghostty](applications/terminal/ghostty.md)
       * [Starship](applications/terminal/starship.md)
     * [Editors](applications/editors/README.md)
+      * [VS Code](applications/editors/vscode.md)
     * [Browsers](applications/browsers/README.md)
     * [Productivity](applications/productivity/README.md)
     * [Communication](applications/communication/README.md)

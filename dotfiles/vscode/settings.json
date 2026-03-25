@@ -1,0 +1,66 @@
+{
+  // Workbench
+  "workbench.colorTheme": "Catppuccin Frappé",
+  "workbench.iconTheme": "catppuccin-frappe",
+  "workbench.activityBar.visible": false,
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.swipeToNavigate": true,
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.panel.defaultLocation": "bottom",
+  "workbench.settings.editor": "json",
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 20,
+  "workbench.tree.renderIndentGuides": "none",
+
+  // Window
+  "window.commandCenter": false,
+
+  // Breadcrumbs
+  "breadcrumbs.enabled": false,
+
+  // Editor
+  "editor.detectIndentation": false,
+  "editor.cursorBlinking": "solid",
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 2,
+  "editor.folding": false,
+  "editor.fontFamily": "MesloLGM Nerd Font Mono",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": false,
+  // Simple navigation
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+  "editor.lightbulb.enabled": "off",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.renderIndentGuides": false,
+  "editor.scrollBeyondLastLine": false,
+  "editor.stickyScroll.enabled": true,
+  "editor.tabSize": 4,
+
+  // Files
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+
+  // Explorer
+  "explorer.compactFolders": false,
+  "explorer.sortOrder": "type",
+
+  // Extensions
+  "extensions.ignoreRecommendations": true,
+
+  // Terminal
+  "terminal.integrated.defaultLocation": "view",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontFamily": "MesloLGM Nerd Font Mono",
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.tabs.enabled": false,
+
+  // Updates
+  "update.showReleaseNotes": false
+}

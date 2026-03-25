@@ -35,3 +35,6 @@ cask "font-meslo-lg-nerd-font"
 
 # Terminal applications
 cask "ghostty"
+
+# Editors
+cask "visual-studio-code"

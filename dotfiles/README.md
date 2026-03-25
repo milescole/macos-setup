@@ -12,4 +12,8 @@ Current baseline files:
 - `.gitconfig` for Git identity and defaults
 - `.config/ghostty/config` for the Ghostty terminal baseline
 - `.config/starship.toml` for the Starship prompt baseline
+- `vscode/settings.json` for the VS Code editor baseline
+- `vscode/keybindings.json` for the VS Code shortcut baseline
+- `vscode/extensions.txt` for the tracked VS Code extension baseline installed
+  by `./bootstrap/dotfiles.sh vscode`
 - `shell/*` for shell support files restored into `~/shell`

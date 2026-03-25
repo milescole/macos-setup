@@ -1,6 +1,15 @@
 # Editors
 
-Use this folder for editor and IDE documentation.
+Editors are documented separately from terminal tooling because their install,
+sync, and settings lifecycles usually differ from shell packages.
 
-Add one file per tool and keep this page focused on category-level guidance,
-shared setup policy, and any cross-editor conventions you want to maintain.
+Keep this section focused on:
+
+- which editor is part of the default workstation baseline
+- how the editor is installed or restored
+- which settings are tracked in this repository versus synced through the app
+- any shared conventions for fonts, formatting, or shell integration
+
+Current tracked editors:
+
+- `applications/editors/vscode.md`

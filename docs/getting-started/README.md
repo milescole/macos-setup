@@ -15,8 +15,8 @@ Use this order:
 8. Run `./bootstrap/bootstrap.sh` from the repository root.
 9. Review [macOS Settings](macos-settings.md) and the relevant application
    pages for the rest of the machine setup.
-10. Run `./bootstrap/dotfiles.sh` to apply [Dotfiles](dotfiles.md) after the
-   baseline system and tool setup is in place.
+10. Run `./bootstrap/dotfiles.sh` to apply [Dotfiles](dotfiles.md) and the
+    tracked VS Code baseline after the system package setup is in place.
 
 This section covers the baseline steps that should be completed before worrying
 about individual applications or language ecosystems:

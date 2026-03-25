@@ -17,6 +17,7 @@ To install only a specific subset:
 ./bootstrap/dotfiles.sh ghostty
 ./bootstrap/dotfiles.sh shell
 ./bootstrap/dotfiles.sh starship
+./bootstrap/dotfiles.sh vscode
 ```
 
 By default the script will:
@@ -39,8 +40,10 @@ DOTFILES_MODE=remote DOTFILES_BASE_URL="https://raw.githubusercontent.com/<user>
 
 - `core` installs `.gitconfig` and `.zprofile`
 - `ghostty` installs `.config/ghostty/config`
-- `shell` installs `.zshrc` and the tracked `~/my` support files
+- `shell` installs `.zshrc` and the tracked `~/shell` support files
 - `starship` installs `.config/starship.toml`
+- `vscode` installs VS Code user settings, keybindings, and the tracked
+  extension baseline
 
 ## Core Files
 
@@ -85,6 +88,46 @@ Apply it with:
 This shell baseline is where Starship, `zsh-completions`,
 `zsh-autosuggestions`, and `zsh-syntax-highlighting` are actually wired
 together after their packages are installed.
+
+The tracked `paths.zsh` file also adds the VS Code app bundle CLI path when
+`/Applications/Visual Studio Code.app` is present so `code --wait` matches the
+tracked `EDITOR` setting without a separate manual shell command install.
+
+## VS Code Baseline
+
+The tracked VS Code component applies the editor baseline in one step:
+
+- `dotfiles/vscode/settings.json` into
+  `~/Library/Application Support/Code/User/settings.json`
+- `dotfiles/vscode/keybindings.json` into
+  `~/Library/Application Support/Code/User/keybindings.json`
+- installs the curated extension list from `dotfiles/vscode/extensions.txt`
+
+Apply it with:
+
+```bash
+./bootstrap/dotfiles.sh vscode
+```
+
+The full `./bootstrap/dotfiles.sh` run includes this component automatically,
+so a fresh-machine baseline picks up the tracked editor settings and required
+extensions together.
+
+This keeps the editor baseline versioned alongside the shell and terminal
+configuration while still letting VS Code Settings Sync manage anything you do
+not want to track in this repository.
+
+The tracked extension list still lives at `dotfiles/vscode/extensions.txt`.
+Keep that file curated and use the helper script when you want to review the
+currently installed extension IDs from an already configured machine:
+
+```bash
+./scripts/vscode-extensions.sh export
+```
+
+It prints the installed extensions in sorted order. Set
+`VSCODE_EXTENSIONS_OUTPUT_FILE=/tmp/vscode-extensions.txt` if you want to save
+that raw export to a separate file while updating the curated baseline.
 
 ## Recommended Order
 
