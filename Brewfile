@@ -38,3 +38,6 @@ cask "ghostty"
 
 # Editors
 cask "visual-studio-code"
+
+# Browsers
+cask "google-chrome"
