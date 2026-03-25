@@ -44,3 +44,6 @@ cask "google-chrome"
 
 # Communication
 cask "slack"
+
+# Productivity
+cask "1password"
