@@ -10,10 +10,12 @@ if command -v eza >/dev/null 2>&1; then
   unalias -m 'ls' 2>/dev/null || true
   unalias -m 'll' 2>/dev/null || true
 
+  alias l='eza --oneline --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first'
+  alias la='eza --oneline --color=always --color-scale=all --color-scale-mode=gradient --icons=always -a'
   alias ls='eza --header --group --git --long'
-  alias ls.tree='eza --header --group --tree --level=3 --git --long --icons'
+  alias ls.tree='eza --header --group --tree --level=2 --git --long --icons'
   alias ll='eza --header --group --long --all'
-  alias ll.tree='eza --header --group --tree --level=3 --git --long --icons --all'
+  alias ll.tree='eza --header --group --tree --level=2 --git --long --icons --all'
 fi
 
 # === fd ===
