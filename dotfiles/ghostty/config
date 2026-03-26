@@ -1,13 +1,11 @@
 # === Theme and Colors ===
-theme = Catppuccin Frappe
+theme = Catppuccin Mocha
 
 # === Font Configuration ===
 font-family = "FiraCode Nerd Font Mono"
 font-size = 14
 
 # === Window Layout ===
-window-width = 212
-window-height = 18
 window-position-x = 0
 window-position-y = 0
 window-save-state = never

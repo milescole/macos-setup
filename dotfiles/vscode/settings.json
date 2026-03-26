@@ -1,8 +1,8 @@
 {
   // Workbench
-  "workbench.colorTheme": "Catppuccin Frappé",
-  "workbench.iconTheme": "catppuccin-frappe",
-  "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.activityBar.location": "hidden",
   "workbench.editor.enablePreview": true,
   "workbench.editor.swipeToNavigate": true,
   "workbench.editor.tabSizing": "shrink",
@@ -25,22 +25,22 @@
   "editor.cursorStyle": "line",
   "editor.cursorWidth": 2,
   "editor.folding": false,
-  "editor.fontFamily": "MesloLGM Nerd Font Mono",
+  "editor.fontFamily": "FiraCode Nerd Font Mono",
   "editor.fontLigatures": true,
   "editor.formatOnSave": false,
+  "editor.lightbulb.enabled": "off",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.guides.indentation": false,
+  "editor.scrollBeyondLastLine": false,
+  "editor.stickyScroll.enabled": true,
+  "editor.tabSize": 4,
   // Simple navigation
   "editor.gotoLocation.multipleDeclarations": "goto",
   "editor.gotoLocation.multipleDefinitions": "goto",
   "editor.gotoLocation.multipleImplementations": "goto",
   "editor.gotoLocation.multipleReferences": "goto",
   "editor.gotoLocation.multipleTypeDefinitions": "goto",
-  "editor.lightbulb.enabled": "off",
-  "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "all",
-  "editor.renderIndentGuides": false,
-  "editor.scrollBeyondLastLine": false,
-  "editor.stickyScroll.enabled": true,
-  "editor.tabSize": 4,
 
   // Files
   "files.insertFinalNewline": true,
@@ -57,7 +57,7 @@
   // Terminal
   "terminal.integrated.defaultLocation": "view",
   "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.integrated.fontFamily": "MesloLGM Nerd Font Mono",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.tabs.enabled": false,
 
