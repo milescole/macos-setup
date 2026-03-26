@@ -1,5 +1,14 @@
 # Managed shell aliases loaded from .zshrc.
 
+# === navigation ===
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# === safety ===
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
 # === bat ===
 if command -v bat >/dev/null 2>&1; then
   alias cat="bat --theme='OneHalfLight'"
