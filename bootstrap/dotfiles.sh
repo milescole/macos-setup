@@ -126,6 +126,49 @@ install_vscode_extensions() {
   rm -f "${temp_path}"
 }
 
+list_starship_prompts() {
+  local prompt_path prompt_name
+  local nullglob_was_set=0
+
+  shopt -q nullglob && nullglob_was_set=1
+  shopt -s nullglob
+  for prompt_path in "${REPO_ROOT}"/dotfiles/starship/prompts/*.toml; do
+    prompt_name="$(basename "${prompt_path}")"
+    printf '%s\n' "${prompt_name%.toml}"
+  done
+  if (( nullglob_was_set == 0 )); then
+    shopt -u nullglob
+  fi
+}
+
+resolve_starship_prompt_path() {
+  local prompt_name="${1:-${STARSHIP_PROMPT:-powerline}}"
+  local relative_path
+  local prompt_choices=""
+
+  prompt_name="${prompt_name%.toml}"
+  relative_path="starship/prompts/${prompt_name}.toml"
+
+  if [[ ! -f "${REPO_ROOT}/dotfiles/${relative_path}" ]]; then
+    prompt_choices="$(list_starship_prompts | paste -sd ',' -)"
+    prompt_choices="${prompt_choices//,/, }"
+    if [[ -n "${prompt_choices}" ]]; then
+      die "Unknown Starship prompt: ${prompt_name}. Available prompts: ${prompt_choices}."
+    fi
+    die "Unknown Starship prompt: ${prompt_name}. No tracked prompts were found under dotfiles/starship/prompts."
+  fi
+
+  printf '%s\n' "${relative_path}"
+}
+
+install_starship_prompt() {
+  local prompt_name="${1:-}"
+  local relative_path
+
+  relative_path="$(resolve_starship_prompt_path "${prompt_name}")"
+  install_file_to "${relative_path}" "${DEST_HOME}/.config/starship.toml"
+}
+
 install_component() {
   local component="$1"
 
@@ -153,7 +196,10 @@ install_component() {
       install_file_to "zsh/paths.zsh" "${DEST_HOME}/.config/zsh/paths.zsh"
       ;;
     starship)
-      install_file_to "starship/starship.toml" "${DEST_HOME}/.config/starship.toml"
+      install_starship_prompt
+      ;;
+    starship:*)
+      install_starship_prompt "${component#starship:}"
       ;;
     vscode)
       install_file_to "vscode/settings.json" \
@@ -163,7 +209,7 @@ install_component() {
       install_vscode_extensions
       ;;
     *)
-      die "Unknown component: ${component}. Expected one of: all, core, ghostty, shell, starship, vscode."
+      die "Unknown component: ${component}. Expected one of: all, core, ghostty, shell, starship, starship:<prompt>, vscode."
       ;;
   esac
 }

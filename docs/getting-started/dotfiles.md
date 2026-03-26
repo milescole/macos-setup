@@ -48,8 +48,9 @@ DOTFILES_MODE=remote DOTFILES_BASE_URL="https://raw.githubusercontent.com/<user>
   for both Ghostty and cmux
 - `shell` installs `dotfiles/zsh/.zshrc` to `~/.zshrc` and maps the tracked
   `dotfiles/zsh/*.zsh` support files into `~/.config/zsh/`
-- `starship` installs `dotfiles/starship/starship.toml` to
-  `~/.config/starship.toml`
+- `starship` installs `dotfiles/starship/prompts/powerline.toml` to
+  `~/.config/starship.toml` by default, or another tracked preset from
+  `dotfiles/starship/prompts/` when selected
 - `vscode` installs VS Code user settings, keybindings, and the tracked
   extension baseline
 

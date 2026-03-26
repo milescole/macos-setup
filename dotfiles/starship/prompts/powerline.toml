@@ -11,6 +11,7 @@ $username\
 $directory\
 [](fg:peach bg:yellow)\
 $git_branch\
+$git_state\
 $git_status\
 [ ](fg:yellow)\
 $line_break\
@@ -79,9 +80,31 @@ symbol = ""
 style = "fg:crust bg:yellow"
 format = '[  $symbol $branch ]($style)'
 
-[git_status]
+[git_state]
+format = '[ $state( $progress_current/$progress_total) ]($style)'
 style = "fg:crust bg:yellow"
-format = '[($all_status$ahead_behind )]($style)'
+rebase = ""
+merge = ""
+revert = "󰕌"
+cherry_pick = ""
+bisect = ""
+am = ""
+am_or_rebase = " or "
+
+[git_status]
+format = '[ $all_status$ahead_behind]($style)'
+style = "fg:crust bg:yellow"
+ahead = '⇡${count} '
+behind = '⇣${count} '
+conflicted = '~${count} '
+deleted = '✘${count} '
+diverged = '⇣${behind_count} ⇡${ahead_count} '
+modified = '!${count} '
+renamed = '»${count} '
+staged = '+${count} '
+stashed = '*${count} '
+untracked = '?${count} '
+up_to_date = ''
 
 [nodejs]
 symbol = ""
@@ -153,7 +176,8 @@ vimcmd_visual_symbol = '[❮](bold fg:yellow)'
 
 [cmd_duration]
 show_milliseconds = true
-format = '[  $duration ]($style)'
+min_time = 0
+format = '[$duration ]($style) '
 style = "fg:crust bg:sapphire"
 disabled = false
 show_notifications = true
