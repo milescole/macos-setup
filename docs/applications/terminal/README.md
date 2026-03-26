@@ -8,6 +8,7 @@ Add one file per tool, for example:
 
 Current tracked tools:
 
+- `applications/terminal/cmux.md`
 - `applications/terminal/ghostty.md`
 - `applications/terminal/starship.md`
 

@@ -18,6 +18,7 @@
       * [Codex](applications/ai/codex.md)
       * [Codex App](applications/ai/codex-app.md)
     * [Terminal](applications/terminal/README.md)
+      * [CMUX](applications/terminal/cmux.md)
       * [Ghostty](applications/terminal/ghostty.md)
       * [Starship](applications/terminal/starship.md)
     * [Editors](applications/editors/README.md)

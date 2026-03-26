@@ -41,6 +41,7 @@ cask "font-meslo-lg"
 cask "font-meslo-lg-nerd-font"
 
 # Terminal applications
+cask "cmux"
 cask "ghostty"
 
 # Editors

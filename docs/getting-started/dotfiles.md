@@ -45,6 +45,7 @@ DOTFILES_MODE=remote DOTFILES_BASE_URL="https://raw.githubusercontent.com/<user>
 - `core` installs `dotfiles/git/.gitconfig` to `~/.gitconfig` and
   `dotfiles/zsh/.zprofile` to `~/.zprofile`
 - `ghostty` installs `dotfiles/ghostty/config` to `~/.config/ghostty/config`
+  for both Ghostty and cmux
 - `shell` installs `dotfiles/zsh/.zshrc` to `~/.zshrc` and maps the tracked
   `dotfiles/zsh/*.zsh` support files into `~/.config/zsh/`
 - `starship` installs `dotfiles/starship/starship.toml` to

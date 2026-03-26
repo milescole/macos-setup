@@ -12,7 +12,7 @@ and `~/.config`.
 Current baseline folders:
 
 - `git/.gitconfig` for Git identity and defaults
-- `ghostty/config` for the Ghostty terminal baseline
+- `ghostty/config` for the shared Ghostty and cmux terminal baseline
 - `starship/starship.toml` for the Starship prompt baseline
 - `zsh/.zprofile` for Homebrew shell initialization, installed to `~/.zprofile`
 - `zsh/.zshrc` for the interactive shell baseline, installed to `~/.zshrc`

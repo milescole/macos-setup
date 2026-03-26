@@ -16,6 +16,9 @@ into `~/.config/ghostty/config` with:
 ./bootstrap/dotfiles.sh ghostty
 ```
 
+That same installed file is also the effective baseline for `cmux`, because
+cmux reads Ghostty config files from `~/.config/ghostty/config`.
+
 This baseline config stays intentionally small:
 
 - a built-in Ghostty theme
