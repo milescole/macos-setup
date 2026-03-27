@@ -1,6 +1,14 @@
 # Appearance
 Catppuccin.catppuccin-vsc
 catppuccin.catppuccin-vsc-icons
+# Optional themes
+# enkia.tokyo-night
+# dracula-theme.theme-dracula
+# GitHub.github-vscode-theme
+# sdras.night-owl
+# arcticicestudio.nord-visual-studio-code
+# mvllow.rose-pine
+# PKief.material-icon-theme
 
 # Python
 ms-python.python

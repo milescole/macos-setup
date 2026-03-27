@@ -23,7 +23,8 @@ That command:
 
 - restores `settings.json` into `~/Library/Application Support/Code/User/`
 - restores `keybindings.json` into `~/Library/Application Support/Code/User/`
-- installs the tracked extensions from `dotfiles/vscode/extensions.txt`
+- installs the active extensions from `dotfiles/vscode/extensions.txt`
+  while ignoring commented-out optional entries
 
 The tracked shell PATH baseline also adds:
 
@@ -43,7 +44,7 @@ The main tracked `settings.json` is the normal baseline:
 - a reduced editor chrome setup with the minimap disabled
 - a predictable startup state with no welcome screen
 - a tracked keybindings file ready for machine-wide shortcuts
-- a theme selection that matches the tracked extension baseline
+- the `Catppuccin Mocha` color theme with `catppuccin-mocha` icons
 
 The extension helper remains available as a maintenance command when you want
 to review the installed extension set from an existing machine:
@@ -53,7 +54,9 @@ to review the installed extension set from an existing machine:
 ```
 
 That command prints the installed extension IDs in sorted order. Keep
-`dotfiles/vscode/extensions.txt` curated, or set
+`dotfiles/vscode/extensions.txt` curated. Lines that start with `#` are treated
+as comments and skipped by both the install and verify commands, which lets the
+file keep optional themes visible without installing them by default. Set
 `VSCODE_EXTENSIONS_OUTPUT_FILE=/tmp/vscode-extensions.txt` if you want to save
 the raw export to a separate file while you edit the tracked baseline.
 

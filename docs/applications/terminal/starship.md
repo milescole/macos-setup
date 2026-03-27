@@ -10,33 +10,42 @@ brew install starship
 ```
 
 Tracked prompt presets live under `dotfiles/starship/prompts/`. The default
-prompt at `dotfiles/starship/prompts/powerline.toml` is restored into
+prompt at `dotfiles/starship/prompts/minimal-catppuccin.toml` is restored into
 `~/.config/starship.toml` with:
 
 ```bash
 ./bootstrap/dotfiles.sh starship
 ```
 
-Alternate presets are also tracked at:
+Prompt preset names now follow a `layout-palette` convention so the file name
+describes both the structure and the color system. The currently tracked
+presets are:
 
-- `dotfiles/starship/prompts/powerline-soft.toml` for the original
-  single-template powerline layout
-- `dotfiles/starship/prompts/minimal.toml` for a minimal prompt that keeps the
-  runtime and git icons, with directory and git state on the left and active
-  runtime and timing on the right
+- `dotfiles/starship/prompts/minimal-catppuccin.toml` for the minimal layout
+  with the Catppuccin Mocha palette
+- `dotfiles/starship/prompts/minimal-nord.toml` for a muted Nord take on the
+  minimal layout
+- `dotfiles/starship/prompts/minimal-nord-aurora.toml` for a brighter,
+  more saturated Nord-family variant of the same layout
+- `dotfiles/starship/prompts/minimal-tokyonight.toml` for the minimal layout
+  with Tokyo Night blue and cyan accents
+- `dotfiles/starship/prompts/powerline-catppuccin.toml` for the segmented
+  powerline layout with the Catppuccin Mocha palette
 
 To install a specific prompt preset, either pass it inline:
 
 ```bash
-./bootstrap/dotfiles.sh starship:powerline
-./bootstrap/dotfiles.sh starship:powerline-soft
-./bootstrap/dotfiles.sh starship:minimal
+./bootstrap/dotfiles.sh starship:powerline-catppuccin
+./bootstrap/dotfiles.sh starship:minimal-catppuccin
+./bootstrap/dotfiles.sh starship:minimal-nord
+./bootstrap/dotfiles.sh starship:minimal-nord-aurora
+./bootstrap/dotfiles.sh starship:minimal-tokyonight
 ```
 
 or set it through the environment:
 
 ```bash
-STARSHIP_PROMPT=powerline-soft ./bootstrap/dotfiles.sh starship
+STARSHIP_PROMPT=minimal-tokyonight ./bootstrap/dotfiles.sh starship
 ```
 
 This commit tracks the package and prompt config only. Shell activation is

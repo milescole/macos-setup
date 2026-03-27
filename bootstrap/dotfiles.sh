@@ -142,7 +142,7 @@ list_starship_prompts() {
 }
 
 resolve_starship_prompt_path() {
-  local prompt_name="${1:-${STARSHIP_PROMPT:-powerline}}"
+  local prompt_name="${1:-${STARSHIP_PROMPT:-minimal-catppuccin}}"
   local relative_path
   local prompt_choices=""
 

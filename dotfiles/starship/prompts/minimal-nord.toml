@@ -1,0 +1,168 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = 'nord'
+
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$fill\
+$python\
+$nodejs\
+$golang\
+$rust\
+$php\
+$java\
+$kotlin\
+$haskell\
+$c\
+$conda\
+$cmd_duration\
+$time\
+$line_break\
+$character\
+"""
+
+[fill]
+symbol = " "
+
+[username]
+show_always = false
+format = "[$user@]($style)"
+style_user = "bold fg"
+style_root = "bold red"
+
+[hostname]
+ssh_only = true
+format = "[$hostname ]($style)"
+style = "bold fg"
+
+[directory]
+format = "[$path]($style) "
+style = "bold white"
+truncation_length = 4
+truncation_symbol = "../"
+truncate_to_repo = false
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "bold blue"
+
+[git_state]
+format = "[($state( $progress_current/$progress_total))]($style) "
+style = "bright_black"
+rebase = ""
+merge = ""
+revert = "󰕌"
+cherry_pick = ""
+bisect = ""
+am = ""
+am_or_rebase = " or "
+
+[git_status]
+format = "[$all_status$ahead_behind]($style)"
+style = "red"
+ahead = "⇡${count} "
+behind = "⇣${count} "
+conflicted = "~${count} "
+deleted = "✘${count} "
+diverged = "⇣${behind_count} ⇡${ahead_count} "
+modified = "!${count} "
+renamed = "»${count} "
+staged = "+${count} "
+stashed = "*${count} "
+untracked = "?${count} "
+up_to_date = ""
+
+[python]
+symbol = " "
+format = '[${pyenv_prefix}(${version} )(\($virtualenv\) )$symbol]($style) '
+style = "green"
+
+[nodejs]
+symbol = " "
+format = "[$version $symbol]($style) "
+style = "green"
+
+[golang]
+symbol = " "
+format = "[$version $symbol]($style) "
+style = "cyan"
+
+[rust]
+symbol = " "
+format = "[$version $symbol]($style) "
+style = "yellow"
+
+[php]
+symbol = " "
+format = "[$version $symbol]($style) "
+style = "blue"
+
+[java]
+symbol = " "
+format = "[$version $symbol]($style) "
+style = "red"
+
+[kotlin]
+symbol = " "
+format = "[$version $symbol]($style) "
+style = "blue"
+
+[haskell]
+symbol = " "
+format = "[$version $symbol]($style) "
+style = "magenta"
+
+[c]
+symbol = " "
+format = "[$version $symbol]($style) "
+style = "blue"
+
+[conda]
+symbol = " "
+format = "[$environment $symbol]($style) "
+style = "green"
+ignore_base = true
+
+[cmd_duration]
+show_milliseconds = true
+min_time = 0
+format = "[$duration ]($style) "
+style = "bright_black"
+
+[time]
+disabled = false
+time_format = "%H:%M"
+format = "[$time 󰥔]($style)"
+style = "bright_black"
+
+[line_break]
+disabled = false
+
+[character]
+success_symbol = "[>](bold blue)"
+error_symbol = "[>](bold red)"
+vimcmd_symbol = "[<](bold blue)"
+vimcmd_replace_one_symbol = "[<](bold yellow)"
+vimcmd_replace_symbol = "[<](bold yellow)"
+vimcmd_visual_symbol = "[<](bold cyan)"
+
+[palettes.nord]
+bg = "#232731"
+fg = "#CFD6E4"
+black = "#2D3241"
+bright_black = "#3B4457"
+red = "#B04B57"
+green = "#93B379"
+yellow = "#E5C179"
+blue = "#6F8FB4"
+magenta = "#A4799D"
+cyan = "#77B3C5"
+cyan_alt = "#7EAFAD"
+white = "#DFE3EC"
+bright_white = "#E7EBF1"

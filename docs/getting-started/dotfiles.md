@@ -48,11 +48,13 @@ DOTFILES_MODE=remote DOTFILES_BASE_URL="https://raw.githubusercontent.com/<user>
   for both Ghostty and cmux
 - `shell` installs `dotfiles/zsh/.zshrc` to `~/.zshrc` and maps the tracked
   `dotfiles/zsh/*.zsh` support files into `~/.config/zsh/`
-- `starship` installs `dotfiles/starship/prompts/powerline.toml` to
+- `starship` installs `dotfiles/starship/prompts/minimal-catppuccin.toml` to
   `~/.config/starship.toml` by default, or another tracked preset from
-  `dotfiles/starship/prompts/` when selected
+  `dotfiles/starship/prompts/` when selected. Tracked Starship presets use a
+  `layout-palette` naming convention such as `minimal-tokyonight`.
 - `vscode` installs VS Code user settings, keybindings, and the tracked
-  extension baseline
+  extension baseline. The tracked settings currently default to the
+  `Catppuccin Mocha` theme with `catppuccin-mocha` icons.
 
 ## Core Files
 
@@ -118,7 +120,8 @@ The tracked VS Code component applies the editor baseline in one step:
   `~/Library/Application Support/Code/User/settings.json`
 - `dotfiles/vscode/keybindings.json` into
   `~/Library/Application Support/Code/User/keybindings.json`
-- installs the curated extension list from `dotfiles/vscode/extensions.txt`
+- installs the active extension entries from `dotfiles/vscode/extensions.txt`
+  and skips commented optional lines
 
 Apply it with:
 
@@ -127,7 +130,7 @@ Apply it with:
 ```
 
 The full `./bootstrap/dotfiles.sh` run includes this component automatically,
-so a fresh-machine baseline picks up the tracked editor settings and required
+so a fresh-machine baseline picks up the tracked editor settings and active
 extensions together.
 
 This keeps the editor baseline versioned alongside the shell and terminal
@@ -136,7 +139,9 @@ not want to track in this repository.
 
 The tracked extension list still lives at `dotfiles/vscode/extensions.txt`.
 Keep that file curated and use the helper script when you want to review the
-currently installed extension IDs from an already configured machine:
+currently installed extension IDs from an already configured machine. Commented
+lines stay in the file as optional extensions but are skipped by install and
+verify:
 
 ```bash
 ./scripts/vscode-extensions.sh export
