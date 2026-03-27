@@ -1,6 +1,10 @@
 # === Theme and Colors ===
 theme = Catppuccin Mocha
 
+# === Appearance ===
+background-opacity = 0.85
+background-blur = 16
+
 # === Font Configuration ===
 font-family = "FiraCode Nerd Font Mono"
 font-size = 14
@@ -8,7 +12,7 @@ font-size = 14
 # === Window Layout ===
 window-position-x = 0
 window-position-y = 0
-window-save-state = never
+window-save-state = always
 
 # === Shell Integration ===
 shell-integration = "detect"
