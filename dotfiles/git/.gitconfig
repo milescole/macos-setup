@@ -3,6 +3,7 @@
     email = me@example.com
 
 [core]
+    editor = vim
     autocrlf = input
 
 [init]
@@ -43,13 +44,125 @@
 [help]
     autocorrect = prompt
 
+[pretty]
+    lo = tformat:%C(auto)%h%C(reset)%C(auto)%d%C(reset) %s %C(italic blue)%ad%C(reset) %C(241)%aN%C(reset)
+    lc = format:%C(auto)%h%C(reset) %C(white)-%C(reset) %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(white)⤷%C(reset) %s %C(241)- %aN <%aE>%C(reset)%n
+    lt = format:%C(auto)%h%C(reset) %C(white)-%C(reset) %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(white)⤷%C(reset) %s %C(241)- %aN <%aE>%C(reset)%n%w(0,7,7)%+(trailers:only,unfold)
+    lf = format:%C(auto)%h%C(reset)%C(auto)%d%C(reset)   %C(italic 239)[P: %p] [T: %t]%C(reset)%n%C(white)Author:%C(reset)   %aN %C(241)<%aE>%C(reset)%n          %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%n%C(white)Commit:%C(reset)   %cN %C(241)<%cE>%C(reset)   %C(italic 239)[GPG: %G?% GK]%C(reset)%n          %C(italic blue)%cd%C(reset) %C(italic cyan)(%cr)%C(reset)%w(0,4,4)%n%n%C(bold)%s%C(reset)%n%n%-b%n%n%-N%n
+    rlo = tformat:%C(auto)%h%C(reset) %C(bold yellow)(%C(magenta)%gd%C(bold yellow))%C(reset)%C(auto)%d%C(reset) %gs %C(italic blue)%ad%C(reset) %C(241)%aN%C(reset)
+    rlc = format:%C(auto)%h%C(reset) %C(white)-%C(reset) %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(white)⤷%C(reset) %s %C(241)- %aN <%aE>%C(reset)%n %C(white)⤷%C(reset) %C(bold yellow)(%C(magenta)%gd%C(bold yellow))%C(reset) %gs %C(241)- %gN <%gE>%C(reset)%n
+    rlt = format:%C(auto)%h%C(reset) %C(white)-%C(reset) %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%C(auto)%d%C(reset)%n %C(white)⤷%C(reset) %s %C(241)- %aN <%aE>%C(reset)%n %C(white)⤷%C(reset) %C(bold yellow)(%C(magenta)%gd%C(bold yellow))%C(reset) %gs %C(241)- %gN <%gE>%C(reset)%n%w(0,7,7)%+(trailers:only,unfold)
+    rlf = format:%C(auto)%h%C(reset) %C(bold yellow)(%C(magenta)%gd%C(bold yellow))%C(reset)%C(auto)%d%C(reset)   %C(italic 239)[P: %p] [T: %t]%C(reset)%n%C(white)Author:%C(reset)   %aN %C(241)<%aE>%C(reset)%n          %C(italic blue)%ad%C(reset) %C(italic cyan)(%ar)%C(reset)%n%C(white)Commit:%C(reset)   %cN %C(241)<%cE>%C(reset)   %C(italic 239)[GPG: %G?% GK]%C(reset)%n          %C(italic blue)%cd%C(reset) %C(italic cyan)(%cr)%C(reset)%n%C(white)Reflog:%C(reset)   %gN %C(241)<%gE>%C(reset)%n          %C(italic)%gs%C(reset)%w(0,4,4)%n%n%C(bold)%s%C(reset)%n%n%-b%n%n%-N%n
+
 [alias]
-    st = status
+    # index
+    a = add
+    aa = add --all
+    ap = add --patch
+    au = add --update
+
+    # branch
+    b = branch
+    bl = branch -vv
+    bla = branch --all -vv
+
+    # commit
+    c = commit
+    ca = commit --amend
+    can = commit --amend --no-edit
+    cf = commit --fixup
     ci = commit
-    co = checkout
-    lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
     oops = commit --amend --no-edit
     reword = commit --amend
+
+    # status
+    ss = status --short
+    st = status
+    si = status --ignored
+
+    # checkout / switch / restore
+    co = checkout
+    rf = restore
+    rsf = restore --staged
+    sw = switch
+    swc = switch -c
+
+    # diff
+    d = diff
+    dc = diff --cached
+    dr = "!f() { git diff ${1:-HEAD~} ${2:-HEAD}; }; f"
+    ds = diff --stat --find-renames
+    du = diff @{upstream}...HEAD
+
+    # log, current branch
+    l  = log --pretty=lc --graph
+    lo = log --pretty=lo --graph --date=human
+    ls = log --pretty=lo --graph --date=human --simplify-by-decoration
+    lf = log --pretty=lf --graph
+    ld = log --pretty=lf --graph --cc --stat
+    lp = log --pretty=lf --graph --cc --patch
+
+    # log, all branches+tags on all remotes
+    la  = log --pretty=lc --graph                                       --all
+    lao = log --pretty=lo --graph --date=human                          --all
+    las = log --pretty=lo --graph --date=human --simplify-by-decoration --all
+    laf = log --pretty=lf --graph                                       --all
+    lad = log --pretty=lf --graph --cc --stat                           --all
+    lap = log --pretty=lf --graph --cc --patch                          --all
+
+    # log, all branches+tags on remotes 'origin' and 'upstream'
+    lg  = log --pretty=lc --graph                                       --branches=* --tags=* --remotes=origin --remotes=upstream
+    lgo = log --pretty=lo --graph --date=human                          --branches=* --tags=* --remotes=origin --remotes=upstream
+    lgs = log --pretty=lo --graph --date=human --simplify-by-decoration --branches=* --tags=* --remotes=origin --remotes=upstream
+    lgf = log --pretty=lf --graph                                       --branches=* --tags=* --remotes=origin --remotes=upstream
+    lgd = log --pretty=lf --graph --cc --stat                           --branches=* --tags=* --remotes=origin --remotes=upstream
+    lgp = log --pretty=lf --graph --cc --patch                          --branches=* --tags=* --remotes=origin --remotes=upstream
+
+    # reflog
+    rl  = reflog --pretty=rlc
+    rlo = reflog --pretty=rlo
+    rlf = reflog --pretty=rlf
+    rld = reflog --pretty=rlf --stat
+
+    # stash
+    sl  = stash list --pretty=rlc
+    slo = stash list --pretty=rlo
+    slf = stash list --pretty=rlf
+    sld = stash list --pretty=rlf --stat
+    slp = stash list --pretty=rlf --patch
+    sls = stash show --patch
+
+    # inspection
+    sh = show --stat --cc --summary --patch
+    desc = describe --abbrev=0
+    descl = describe --long
+
+    # network
+    f = fetch --tags
+    ff = fetch --force --prune --tags
+    p = pull
+    pu = push
+    puf = push --force-with-lease
+
+    # merge
+    m = merge
+    ma = merge --abort
+    mc = merge --continue
+
+    # rebase
+    r = rebase
+    ra = rebase --abort
+    rc = rebase --continue
+    ri = rebase --interactive
+    rq = rebase --quit
+    rs = rebase --skip
+
+    # history / lookup
+    who = shortlog --summary --numbered --no-merges
+    which = branch --all --contains
+
+    # recovery
+    undo = reset HEAD~1 --mixed
     uncommit = reset --soft HEAD~1
     untrack = rm --cached --
 

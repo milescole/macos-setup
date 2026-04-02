@@ -53,3 +53,22 @@ fi
 if command -v tldr >/dev/null 2>&1; then
   alias help='tldr'
 fi
+
+# === git ===
+if command -v git >/dev/null 2>&1; then
+  alias ga='git a'
+  alias gaa='git aa'
+  alias gb='git b'
+  alias gc='git c'
+  alias gs='git st'
+  alias gss='git ss'
+  alias gd='git d'
+  alias gl='git l'
+  alias glo='git lo -10'
+  alias gla='git la'
+  alias glg='git lg'
+  alias grl='git rl'
+  alias gsl='git sl'
+  alias gp='git p'
+  alias gpu='git pu'
+fi

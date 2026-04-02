@@ -78,6 +78,11 @@ git config --global user.name "Your Full Name"
 git config --global user.email "Your Email"
 ```
 
+The tracked Git baseline also includes grouped history aliases for normal log,
+cross-remote log, reflog, and stash inspection. The main entry points are
+`git l`, `git la`, `git lg`, `git rl`, and `git sl`, with `o`, `s`, `f`, `d`,
+and `p` suffixes for alternate output depth.
+
 ## Shell Files
 
 The tracked shell component restores:
