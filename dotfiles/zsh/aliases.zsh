@@ -11,7 +11,7 @@ alias rm='rm -i'
 
 # === bat ===
 if command -v bat >/dev/null 2>&1; then
-  alias cat="bat --theme='OneHalfLight'"
+  alias cat='bat --style=plain --paging=never'
 fi
 
 # === eza ===

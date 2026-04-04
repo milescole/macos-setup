@@ -11,6 +11,7 @@ and `~/.config`.
 
 Current baseline folders:
 
+- `bat/config` for the shared `bat` defaults installed to `~/.config/bat/config`
 - `git/.gitconfig` for Git identity and defaults
 - `ghostty/config` for the shared Ghostty and cmux terminal baseline
 - `starship/prompts/*.toml` for tracked Starship prompt presets named with a

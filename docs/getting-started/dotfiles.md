@@ -47,7 +47,8 @@ DOTFILES_MODE=remote DOTFILES_BASE_URL="https://raw.githubusercontent.com/<user>
 - `ghostty` installs `dotfiles/ghostty/config` to `~/.config/ghostty/config`
   for both Ghostty and cmux
 - `shell` installs `dotfiles/zsh/.zshrc` to `~/.zshrc` and maps the tracked
-  `dotfiles/zsh/*.zsh` support files into `~/.config/zsh/`
+  `dotfiles/zsh/*.zsh` support files into `~/.config/zsh/`, plus
+  `dotfiles/bat/config` into `~/.config/bat/config`
 - `starship` installs `dotfiles/starship/prompts/minimal-catppuccin.toml` to
   `~/.config/starship.toml` by default, or another tracked preset from
   `dotfiles/starship/prompts/` when selected. Tracked Starship presets use a
@@ -87,6 +88,7 @@ and `p` suffixes for alternate output depth.
 
 The tracked shell component restores:
 
+- `dotfiles/bat/config` into `~/.config/bat/config`
 - `dotfiles/zsh/.zshrc` into `~/.zshrc`
 - `dotfiles/zsh/aliases.zsh` into `~/.config/zsh/aliases.zsh`
 - `dotfiles/zsh/exports.zsh` into `~/.config/zsh/exports.zsh`

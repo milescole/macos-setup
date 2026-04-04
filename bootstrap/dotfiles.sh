@@ -188,6 +188,7 @@ install_component() {
       install_file_to "ghostty/config" "${DEST_HOME}/.config/ghostty/config"
       ;;
     shell)
+      install_file_to "bat/config" "${DEST_HOME}/.config/bat/config"
       install_file_to "zsh/.zshrc" "${DEST_HOME}/.zshrc"
       install_file_to "zsh/aliases.zsh" "${DEST_HOME}/.config/zsh/aliases.zsh"
       install_file_to "zsh/exports.zsh" "${DEST_HOME}/.config/zsh/exports.zsh"
