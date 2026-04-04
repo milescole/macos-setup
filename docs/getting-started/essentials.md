@@ -41,7 +41,8 @@ The tracked `Brewfile` currently covers a small default set:
 
 - core CLI essentials: `bat`, `eza`, `fd`, `fzf`, `git`, `gh`, `htop`, `jq`,
   `procs`, `ripgrep`, `starship`, `tldr`, `watch`, `zsh`,
-  `zsh-autosuggestions`, `zsh-completions`, and `zsh-syntax-highlighting`
+  `zsh-autosuggestions`, `zsh-completions`, `zsh-syntax-highlighting`, and
+  `zoxide`
 - AI tooling: `chatgpt`, `claude`, `claude-code`, `codex`, and `codex-app`
 
 As the handbook grows, add tools deliberately and keep the baseline focused on
@@ -68,6 +69,7 @@ These are the only CLI tools currently treated as essentials in this repo:
 - [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) — suggest commands from history and completions while typing
 - [`zsh-completions`](https://github.com/zsh-users/zsh-completions) — add extra completion definitions beyond the default shell bundle
 - [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting) — show command feedback inline before execution
+- [`zoxide`](https://github.com/ajeetdsouza/zoxide) — jump to frequently used directories with a ranked `cd` workflow
 
 ## Essential AI Tools
 

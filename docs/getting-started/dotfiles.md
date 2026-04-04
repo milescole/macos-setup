@@ -100,7 +100,7 @@ Apply it with:
 ./bootstrap/dotfiles.sh shell
 ```
 
-This shell baseline is where Starship, `zsh-completions`,
+This shell baseline is where Starship, `zoxide`, `zsh-completions`,
 `zsh-autosuggestions`, and `zsh-syntax-highlighting` are actually wired
 together after their packages are installed.
 

@@ -1,11 +1,12 @@
 # Zsh
 
-This setup standardizes on Homebrew-managed `zsh` plus a small plugin baseline:
+This setup standardizes on Homebrew-managed `zsh` plus a small shell baseline:
 
 - `zsh`
 - `zsh-autosuggestions`
 - `zsh-completions`
 - `zsh-syntax-highlighting`
+- `zoxide`
 
 These packages are installed by the tracked `Brewfile`:
 
@@ -14,6 +15,7 @@ brew install zsh
 brew install zsh-autosuggestions
 brew install zsh-completions
 brew install zsh-syntax-highlighting
+brew install zoxide
 ```
 
 ## Why This Lives In Getting Started
@@ -52,13 +54,14 @@ $SHELL --version
 The shell path should point at the Homebrew install, for example
 `/opt/homebrew/bin/zsh` or `/usr/local/bin/zsh`.
 
-## Plugin Baseline
+## Shell Integration Baseline
 
-The tracked plugin scope stays intentionally small:
+The tracked shell integration scope stays intentionally small:
 
 - `zsh-autosuggestions` for history and completion-driven suggestions
 - `zsh-completions` for extra completion definitions
 - `zsh-syntax-highlighting` for command-line feedback while typing
+- `zoxide` for faster directory jumping from frecency-based matches
 
 This commit installs the packages only. Shell activation and load order are
 handled through the tracked `.zshrc` restored by:
@@ -68,7 +71,8 @@ handled through the tracked `.zshrc` restored by:
 ```
 
 That keeps package installation and shell wiring isolated while still making
-the full shell setup reproducible.
+the full shell setup reproducible. The tracked shell config initializes
+`zoxide` so the `z` and `zi` commands are available after `./bootstrap/dotfiles.sh shell`.
 
 ## Manual Verification And Troubleshooting
 
@@ -96,6 +100,9 @@ source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 brew install zsh-syntax-highlighting
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+brew install zoxide
+eval "$(zoxide init zsh)"
 ```
 
 These commands are troubleshooting aids. The normal repo flow is still:
@@ -108,4 +115,4 @@ These commands are troubleshooting aids. The normal repo flow is still:
 
 - [Starship](../applications/terminal/starship.md) provides the prompt config
 - [Dotfiles](dotfiles.md) restores tracked shell files into `~/.config/zsh`
-- the tracked shell dotfiles wire `zsh`, Starship, and the plugins together
+- the tracked shell dotfiles wire `zsh`, Starship, `zoxide`, and the plugins together

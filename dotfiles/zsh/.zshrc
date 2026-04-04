@@ -49,6 +49,11 @@ if command -v brew >/dev/null 2>&1; then
   fi
 fi
 
+# === Navigation ===
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
+
 # === Managed Zsh Config ===
 for zsh_file in exports.zsh paths.zsh functions.zsh aliases.zsh; do
   load_zsh_file "${zsh_file}"
