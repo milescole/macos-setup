@@ -56,3 +56,4 @@ cask "slack"
 
 # Productivity
 cask "1password"
+cask "obsidian"

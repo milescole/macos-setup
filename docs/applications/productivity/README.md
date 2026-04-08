@@ -13,30 +13,20 @@ Keep this section focused on:
 
 ## Current Baseline
 
-`1Password` is the default productivity baseline in this setup.
+The default productivity baseline in this setup currently includes:
 
-It belongs in the baseline because it is the main password manager, part of
-normal day-to-day machine use, and easy to restore from the tracked
-`Brewfile`.
+- `1Password` for password management, MFA recovery, and secure access to
+  developer services
+- `Obsidian` for local notes, working drafts, and Markdown-based knowledge
+  capture
+
+Both apps are restored from the tracked `Brewfile`:
 
 ```bash
 brew install --cask 1password
+brew install --cask obsidian
 ```
 
-1Password state is not tracked in this repository. Treat these as
-account-managed instead:
-
-- vault membership and account access
-- stored logins, secure notes, and SSH keys
-- browser integration and autofill behavior
-- biometric unlock and security preferences
-
-Use the normal 1Password sign-in flow to restore vault access after a rebuild,
-but keep machine-wide setup decisions documented here rather than trying to
-track secrets or app state in dotfiles.
-
-For the workstation baseline, 1Password mainly exists for:
-
-- account login and MFA recovery during machine setup
-- secure access to developer services and shared credentials
-- restoring browser and app sign-in state without unmanaged local secrets
+State for productivity apps is not tracked in this repository. Keep
+machine-wide setup decisions documented here, but treat app data, accounts,
+vaults, and vault contents as app-managed or account-managed.
