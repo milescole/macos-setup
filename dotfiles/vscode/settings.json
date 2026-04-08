@@ -10,7 +10,7 @@
   "workbench.settings.editor": "json",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
-  "workbench.tree.indent": 20,
+  "workbench.tree.indent": 10,
   "workbench.tree.renderIndentGuides": "none",
 
   // Window
